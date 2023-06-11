@@ -13,7 +13,7 @@ app.set("view engine", "ejs");
 // routes
 // app.METHOD(PATH, HANDLER)
 app.get("/", (req, res) => {
-  res.send("<h1>Hello World!</h1>");
+  res.send("<h1>Hello World! Nodemon</h1>");
 });
 
 app.get("/test1", (req, res) => {
