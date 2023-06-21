@@ -12,6 +12,10 @@ const port = process.env.PORT; // port
 // config template engine
 configViewEngine(app);
 
+// config req.body
+app.use(express.json()); // for json
+app.use(express.urlencoded({ extended: true })); // for form data
+
 // routes
 // app.METHOD(PATH, HANDLER)
 app.use("/", webRoutes);
