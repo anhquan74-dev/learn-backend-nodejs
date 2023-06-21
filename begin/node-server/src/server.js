@@ -21,10 +21,10 @@ app.use(express.urlencoded({ extended: true })); // for form data
 app.use("/", webRoutes);
 
 // simple query
-connection.query("SELECT * FROM `Users`", function (err, results, fields) {
-  console.log("results: ", results); // results contains rows returned by server
-  // console.log(fields); // fields contains extra meta data about results, if available
-});
+// connection.query("SELECT * FROM `Users`", function (err, results, fields) {
+//   console.log("results: ", results); // results contains rows returned by server
+//   // console.log(fields); // fields contains extra meta data about results, if available
+// });
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);

@@ -3,6 +3,7 @@ const router = express.Router();
 const {
   getHomepage,
   postCreateUser,
+  getCreateUserPage,
 } = require("../controllers/homeController");
 
 // router.METHOD(path, handler)
@@ -17,6 +18,8 @@ router.get("/test-ejs", (req, res) => {
   res.render("sample.ejs");
 });
 
-router.post("/create-user", postCreateUser);
+router.get("/create", getCreateUserPage);
+
+router.post("/create-user-success", postCreateUser);
 
 module.exports = router; // export default
