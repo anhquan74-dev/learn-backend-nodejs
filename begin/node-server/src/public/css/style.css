@@ -30,3 +30,31 @@
   background-color: #04aa6d;
   color: white;
 }
+
+.content h1 {
+  text-align: center;
+}
+
+.form-add-new {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.form-add-new label {
+  min-width: 60px;
+  display: inline-block;
+}
+
+.form-add-new fieldset {
+  padding: 10px;
+}
+
+.form-add-new input[type="text"],
+input[type="email"] {
+  padding: 4px;
+  min-width: 300px;
+}
+
+.form-add-new input[type="submit"] {
+  padding: 4px 6px;
+}
