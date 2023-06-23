@@ -33,6 +33,7 @@
 
 .content h1 {
   text-align: center;
+  margin: 16px auto;
 }
 
 .form-add-new {
@@ -57,4 +58,18 @@ input[type="email"] {
 
 .form-add-new input[type="submit"] {
   padding: 4px 6px;
+}
+
+.list-user {
+  width: 800px;
+  margin: 0 auto;
+}
+
+table,
+tr,
+td,
+th {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  padding: 10px 6px;
 }

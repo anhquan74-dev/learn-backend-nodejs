@@ -1,10 +1,9 @@
 const connection = require("../config/database");
+const { getAllUsers } = require("../services/CRUDService");
 
-const getHomepage = (req, res) => {
-  // process data
-  // call model
-  // res.send("<h1>Hello World! Nodemon</h1>");
-  return res.render("home.ejs");
+const getHomepage = async (req, res) => {
+  const [results, fields] = await getAllUsers();
+  return res.render("home.ejs", { users: results });
 };
 
 const postCreateUser = async (req, res) => {
