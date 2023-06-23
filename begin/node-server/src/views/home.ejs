@@ -14,7 +14,6 @@
 
     <div class="content">
       <h1>List Users</h1>
-      <%= JSON.stringify(users) %>
       <table class="list-user">
         <thead>
           <tr>
@@ -26,16 +25,18 @@
           </tr>
         </thead>
         <tbody>
+          <% for(let user of users) { %> <% console.log("user: ", user.id)%>
           <tr>
-            <td>1</td>
-            <td>trananhquan0704@gmail.com</td>
-            <td>Tran Anh Quan</td>
-            <td>Tam Ky City</td>
+            <td><%= user.id %></td>
+            <td><%= user.email %></td>
+            <td><%= user.name %></td>
+            <td><%= user.city %></td>
             <td>
               <button>Edit</button>
               <button>Delete</button>
             </td>
           </tr>
+          <% } %>
         </tbody>
       </table>
     </div>
