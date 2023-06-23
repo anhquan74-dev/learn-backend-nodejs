@@ -21,7 +21,7 @@ router.get("/test-ejs", (req, res) => {
 
 router.get("/create", getCreateUserPage);
 
-router.get("/update", getUpdateUserPage);
+router.get("/update/:userId", getUpdateUserPage);
 
 router.post("/create-user-success", postCreateUser);
 

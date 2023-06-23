@@ -9,7 +9,6 @@
   <body>
     <div class="topnav">
       <a href="/">Home</a>
-      <a href="/create">Create User</a>
       <a class="active" href="/update">Update User</a>
     </div>
     <div class="content">
@@ -19,11 +18,26 @@
         <fieldset>
           <legend>Personalia:</legend>
           <label for="email">Email:</label>
-          <input type="email" id="email" name="email" /><br /><br />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value="<%= user.email%>"
+          /><br /><br />
           <label for="name">Name:</label>
-          <input type="text" id="name" name="name" /><br /><br />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value="<%= user.name%>"
+          /><br /><br />
           <label for="city">City:</label>
-          <input type="text" id="city" name="city" /><br /><br />
+          <input
+            type="text"
+            id="city"
+            name="city"
+            value="<%= user.city%>"
+          /><br /><br />
           <input type="submit" value="Save" />
         </fieldset>
       </form>

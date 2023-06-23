@@ -10,7 +10,6 @@
     <div class="topnav">
       <a class="active" href="/">Home</a>
       <a href="/create">Create User</a>
-      <a href="/update">Update User</a>
     </div>
 
     <div class="content">
@@ -26,14 +25,14 @@
           </tr>
         </thead>
         <tbody>
-          <% for(let user of users) { %> <% console.log("user: ", user.id)%>
+          <% for(let user of users) { %>
           <tr>
             <td><%= user.id %></td>
             <td><%= user.email %></td>
             <td><%= user.name %></td>
             <td><%= user.city %></td>
             <td>
-              <a href="/update">Edit</a>
+              <a href="/update/<%= user.id %>">Edit</a>
               <button>Delete</button>
             </td>
           </tr>

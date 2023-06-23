@@ -4,4 +4,8 @@ const getAllUsers = () => {
   return connection.query("SELECT * FROM Users");
 };
 
-module.exports = { getAllUsers };
+const getUserById = (userId) => {
+  return connection.query(`SELECT * FROM Users WHERE id = ${userId}`);
+};
+
+module.exports = { getAllUsers, getUserById };
