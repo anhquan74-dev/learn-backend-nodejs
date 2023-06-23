@@ -3,13 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Home</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <div class="topnav">
       <a class="active" href="/">Home</a>
       <a href="/create">Create User</a>
+      <a href="/update">Update User</a>
     </div>
 
     <div class="content">
@@ -32,7 +33,7 @@
             <td><%= user.name %></td>
             <td><%= user.city %></td>
             <td>
-              <button>Edit</button>
+              <a href="/update">Edit</a>
               <button>Delete</button>
             </td>
           </tr>

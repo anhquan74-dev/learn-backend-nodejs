@@ -4,6 +4,7 @@ const {
   getHomepage,
   postCreateUser,
   getCreateUserPage,
+  getUpdateUserPage,
 } = require("../controllers/homeController");
 
 // router.METHOD(path, handler)
@@ -19,6 +20,8 @@ router.get("/test-ejs", (req, res) => {
 });
 
 router.get("/create", getCreateUserPage);
+
+router.get("/update", getUpdateUserPage);
 
 router.post("/create-user-success", postCreateUser);
 
