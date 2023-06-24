@@ -3,7 +3,6 @@ const express = require("express"); // commonjs
 const configViewEngine = require("./config/viewEngine");
 const webRoutes = require("./routes/web");
 const connection = require("./config/database");
-const Kitten = require("./models/Kitten");
 
 const app = express(); // app express
 const hostname = process.env.HOST_NAME;
@@ -18,10 +17,6 @@ app.use(express.urlencoded({ extended: true })); // for form data
 
 // routes
 app.use("/", webRoutes);
-
-const silence = new Kitten({ name: "Silence" });
-silence.save();
-console.log(silence.name); // 'Silence'
 
 // test db connection
 (async () => {
