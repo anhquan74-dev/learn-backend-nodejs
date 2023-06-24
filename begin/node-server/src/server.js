@@ -3,7 +3,7 @@ const express = require("express"); // commonjs
 const configViewEngine = require("./config/viewEngine");
 const webRoutes = require("./routes/web");
 const connection = require("./config/database");
-const mongoose = require("mongoose");
+const Kitten = require("./models/Kitten");
 
 const app = express(); // app express
 const hostname = process.env.HOST_NAME;
@@ -19,11 +19,6 @@ app.use(express.urlencoded({ extended: true })); // for form data
 // routes
 app.use("/", webRoutes);
 
-// create schema
-const kittySchema = new mongoose.Schema({
-  name: String,
-});
-const Kitten = mongoose.model("Kitten", kittySchema);
 const silence = new Kitten({ name: "Silence" });
 silence.save();
 console.log(silence.name); // 'Silence'
