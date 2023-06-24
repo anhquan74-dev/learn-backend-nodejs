@@ -5,6 +5,7 @@ const {
   postCreateUser,
   getCreateUserPage,
   getUpdateUserPage,
+  postUpdateUser,
 } = require("../controllers/homeController");
 
 // router.METHOD(path, handler)
@@ -24,5 +25,7 @@ router.get("/create", getCreateUserPage);
 router.get("/update/:userId", getUpdateUserPage);
 
 router.post("/create-user-success", postCreateUser);
+
+router.post("/update-user-success", postUpdateUser);
 
 module.exports = router; // export default

@@ -5,7 +5,18 @@ const getAllUsers = () => {
 };
 
 const getUserById = (userId) => {
-  return connection.query(`SELECT * FROM Users WHERE id = ${userId}`);
+  return connection.query("SELECT * FROM Users WHERE id = ?", [userId]);
 };
 
-module.exports = { getAllUsers, getUserById };
+const updateUserById = (user) => {
+  const { email, name, city, userId } = user;
+
+  return connection.query(
+    `UPDATE Users
+    SET email = ?, name = ?, city = ?
+    WHERE id = ?`,
+    [email, name, city, userId]
+  );
+};
+
+module.exports = { getAllUsers, getUserById, updateUserById };
