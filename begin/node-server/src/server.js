@@ -15,15 +15,17 @@ configViewEngine(app);
 app.use(express.json()); // for json
 app.use(express.urlencoded({ extended: true })); // for form data
 
-// test db connection
-const testConnection = async () => {
-  await connection();
-};
-testConnection();
-
 // routes
 app.use("/", webRoutes);
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
+// test db connection
+(async () => {
+  try {
+    await connection();
+    app.listen(port, () => {
+      console.log(`Example app listening on port ${port}`);
+    });
+  } catch (error) {
+    console.log("Mongoose check connection error: ", error);
+  }
+})();
