@@ -19,4 +19,8 @@ const updateUserById = (user) => {
   );
 };
 
-module.exports = { getAllUsers, getUserById, updateUserById };
+const deleteUserById = (userId) => {
+  return connection.query("DELETE FROM Users WHERE id = ?", [userId]);
+};
+
+module.exports = { getAllUsers, getUserById, updateUserById, deleteUserById };
