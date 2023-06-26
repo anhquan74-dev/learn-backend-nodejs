@@ -8,34 +8,18 @@ const {
 } = require("../services/CRUDService");
 
 const getHomepage = async (req, res) => {
-  // const [results, fields] = await getAllUsers();
-  const results = [];
+  const results = await User.find({});
   return res.render("home.ejs", { users: results });
 };
 
 const postCreateUser = async (req, res) => {
   const { email, name, city } = req.body;
-
-  // connection.query(
-  //   `INSERT INTO Users (email, name, city)
-  //   VALUES (?, ?, ?)`,
-  //   [email, name, city],
-  //   function (err, results, fields) {
-  //     console.log(results); // results contains rows returned by server
-  //     res.send("create user success");
-  //   }
-  // );
-
-  // let [results, fields] = await connection.query(
-  //   `INSERT INTO Users (email, name, city) VALUES (?, ?, ?)`,
-  //   [email, name, city]
-  // );
   await User.create({
     email,
     name,
     city,
   });
-  res.send("create user success");
+  res.redirect("/");
 };
 
 const postUpdateUser = async (req, res) => {
