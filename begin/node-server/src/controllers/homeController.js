@@ -23,9 +23,8 @@ const postCreateUser = async (req, res) => {
 };
 
 const postUpdateUser = async (req, res) => {
-  const user = req.body;
-  let [results, fields] = await updateUserById(user);
-  // res.send("Update user success");
+  const { email, name, city, userId } = req.body;
+  await User.updateOne({ _id: userId }, { email, name, city });
   res.redirect("/");
 };
 
@@ -35,21 +34,19 @@ const getCreateUserPage = (req, res) => {
 
 const getUpdateUserPage = async (req, res) => {
   const { userId } = req.params;
-  const [results, fields] = await getUserById(userId);
-  const user = results && results.length > 0 ? results[0] : {};
+  const user = await User.findById(userId);
   res.render("updateUser.ejs", { user });
 };
 
 const postConfirmDelete = async (req, res) => {
   const { userId } = req.params;
-  const [results, fields] = await getUserById(userId);
-  const user = results && results.length > 0 ? results[0] : {};
+  const user = await User.findById(userId);
   res.render("confirmDeleteUser.ejs", { user });
 };
 
 const postDeleteUser = async (req, res) => {
   const { userId } = req.body;
-  await deleteUserById(userId);
+  await User.deleteOne({ _id: userId });
   res.redirect("/");
 };
 
